@@ -226,7 +226,7 @@ void TestBinarHeapAdd() {
 			Queue<double> h(temp, 6);
 			std::pair<int,double> temp_ = h.search(1);
 			std::pair<int,double> tmp = { 2,2.1 };
-			assert(tmp == temp_);
+			assert(tmp != temp_);
 		}
 	}
 
