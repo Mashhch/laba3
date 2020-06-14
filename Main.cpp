@@ -111,7 +111,7 @@ void TestBinarHeapAdd() {
 		{
 			BinaryTree<int> h(2);
 			bool quest = false;
-			for (auto i = 0; i < 100; i++) h.add(i);
+			for (auto i = 0; i < 10; i++) h.add(i);
 			for (int j = 0; j < h.getSize() - 1; j++) {
 				quest = h.exist(j);
 				assert(quest == true);
@@ -128,15 +128,15 @@ void TestBinarHeapAdd() {
 
 		}
 		{
-			BinaryTree<double> h(2.3);
+			BinaryTree<double> h(2.7);
 			bool quest = false;
 			double i = 0.1;
-			while (i < 5) {
+			while (i < 8) {
 				h.add(i);
 				i = i + 1;
 			}
 			i = 0.1;
-			while (i < 5) {
+			while (i < 8) {
 				quest = h.exist(i);
 				assert(quest == true);
 				i = i + 1;
@@ -145,14 +145,14 @@ void TestBinarHeapAdd() {
 	}
 	void TestBinarTreeDel() {
 		{
-			BinaryTree<int> h(2);
+			BinaryTree<int> h(0);
 			for (auto i = 0; i < 10; i++) h.add(i);
 			h.erase(0);
 			bool quest = h.exist(0);
 			assert(quest != true);
 		}
 		{
-			BinaryTree<int> h(2);
+			BinaryTree<int> h(0);
 			for (auto i = 0; i < 5; i++) h.add(i);
 			h.erase(3);
 			bool quest = h.exist(3);
@@ -161,14 +161,14 @@ void TestBinarHeapAdd() {
 	}
 	void TestBinarTreeFind(){
 	{
-		BinaryTree<int> h(2);
+		BinaryTree<int> h(0);
 		for (auto i = 0; i < 5; i++) h.add(i);
 		int temp = h.min();
 		int tmp = 0;
 		assert(tmp == temp);
 	}
 	{
-		BinaryTree<double> h(2.3);
+		BinaryTree<double> h(2);
 		double i = 1.1;
 		while (i < 6) {
 			h.add(i);
@@ -179,7 +179,7 @@ void TestBinarHeapAdd() {
 		assert(tmp == temp);
 	}
 	{
-		BinaryTree<int> h(2);
+		BinaryTree<int> h(0);
 		for (auto i = 0; i < 5; i++) h.add(i);
 		int temp = h.max();
 		int tmp = 4;
