@@ -30,9 +30,9 @@ void TestBinarHeapAdd() {
 			assert(tmp[j] == temp[j]);
 	}
 	{
-		double temp[6] = { 2.11, 0.53, 1.52, 2.5, 3.71, 4 };
+		double temp[6] = { 2.21, 0.63, 1.52, 2.8, 3.91, 5 };
 		BinaryHeap<double> h(temp, 6);
-		double tmp[6] = { 4, 2.5 ,3.71, 0.53, 2.11, 1.52 };
+		double tmp[6] = { 5, 2.8 ,3.91, 0.63, 2.21, 1.52 };
 		for (int j = 0; j < h.getSize(); j++) {
 			temp[j] = h.searchValue(j);
 		}
@@ -222,10 +222,10 @@ void TestBinarHeapAdd() {
 			assert(tmp == temp);
 		}
 		{
-			std::pair<int,double> temp[6] = { {2,2.1},{0,0.3},{1,1.22},{2,2.5},{3,3.01},{4,4} };
+			std::pair<int,double> temp[6] = { {3,3.2},{1,1.1},{2,2.32},{3,3.6},{4,4.01},{5,5} };
 			Queue<double> h(temp, 6);
 			std::pair<int,double> temp_ = h.search(1);
-			std::pair<int,double> tmp = { 2,2.1 };
+			std::pair<int,double> tmp = { 3,3.2 };
 			assert(tmp != temp_);
 		}
 	}
