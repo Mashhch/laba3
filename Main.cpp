@@ -37,13 +37,13 @@ void TestBinarTreeAdd() {
 			double i = 0.1;
 			while (i < 8) {
 				h.add(i);
-				i = i + 1;
+				i++;
 			}
 			i = 0.1;
 			while (i < 8) {
 				quest = h.exist(i);
 				assert(quest == true);
-				i = i + 1;
+				i++;
 			}
 		}
 	}
@@ -76,7 +76,7 @@ void TestBinarTreeAdd() {
 		double i = 1.1;
 		while (i < 6) {
 			h.add(i);
-			i = i + 1;
+			i++;
 		}
 		double temp = h.min();
 		double tmp = 1.1;
@@ -92,9 +92,9 @@ void TestBinarTreeAdd() {
 	{
 		BinaryTree<double> h(6.3);
 		double i = 1.1;
-		while (i < 6) {
+		while (i < 5) {
 			h.add(i);
-			i = i + 1;
+			i++;
 		}
 		double temp = h.max();
 		double tmp = 6.3;
@@ -234,9 +234,9 @@ void TestBinarHeapAdd() {
 				assert(tmp[j] == temp[j]);
 		}
 		{
-			std::pair<int, double> temp[6] = { {2,2.1 }, {0,0.3 }, {1,1.22}, {2,2.5}, {3,3.01}, {4,4 } };
+			std::pair<int, double> temp[6] = { {2,3.1 }, {1,0.3 }, {1,1.22}, {2,2.6}, {3,3.01}, {5,5 } };
 			Queue<double> h(temp, 6);
-			std::pair<int, double> tmp[6] = { {4,4},{2,2.1},{3,3.01},{0,0.3},{2,2.5},{1,1.22} };
+			std::pair<int, double> tmp[6] = { 5,5},{2,3.1},{3,3.01},{1,0.3},{2,2.6},{1,1.22} };
 			for (int j = 0; j < h.getSize(); j++) {
 				temp[j] = h.search(j);
 			}
@@ -267,7 +267,7 @@ void TestBinarHeapAdd() {
 			assert(tmp == temp);
 		}
 		{
-			std::pair<int,double> temp[6] = { {2,2.1},{0,0.3},{1,1.22},{2,2.5},{3,3.01},{4,4} };
+			std::pair<int,double> temp[6] = { {2,3.1 }, {1,0.3 }, {1,1.22}, {2,2.6}, {3,3.01}, {5,5 } };
 			Queue<double> h(temp, 6);
 			std::pair<int,double> temp_ = h.search(1);
 			std::pair<int,double> tmp = { 2,2.1 };
