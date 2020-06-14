@@ -199,51 +199,7 @@ void TestBinarHeapAdd() {
 
 }
 
-	void TestQueueAdd() {
-		{
-			Queue<int> h(0, 2);
-			std::pair<int, int> tmp[1] = { {0,2} };
-			std::pair<int, int>* temp = new std::pair<int, int>[h.getSize()];
-			for (int j = 0; j < h.getSize(); j++) {
-				temp[j] = h.search(j);
-			}
-			for (int j = 0; j < h.getSize(); j++)
-				assert(tmp[j] == temp[j]);
-		}
-		{
-			Queue<std::complex<int>> h({ 2,(2, 0) });
-			for (int i = 3; i < 5; i++) h.add(i, (i, 0));
-			std::pair<int, std::complex<int>> tmp[3] = { {4,(4,0)},{2,(2,0)},{3,(3,0)} };
-			std::pair<int, std::complex<int>>* temp = new std::pair<int, std::complex<int>>[h.getSize()];
-			for (int j = 0; j < h.getSize(); j++) {
-				temp[j] = h.search(j);
-			}
-			for (int j = 0; j < h.getSize(); j++)
-				assert(tmp[j] == temp[j]);
-		}
-		{
-			Queue<int> h(2, 1);
-			for (auto i = 0; i < 5; i++) h.add(i, i);
-			std::pair<int, int> tmp[6] = { {4,4 },{ 2,1 }, {3,3 }, { 0,0 }, { 2,2 }, { 1,1 } };
-			std::pair<int, int>* temp = new std::pair<int, int>[h.getSize()];
-			for (int j = 0; j < h.getSize(); j++) {
-				temp[j] = h.search(j);
-			}
-			for (int j = 0; j < h.getSize(); j++)
-				assert(tmp[j] == temp[j]);
-		}
-		{
-			std::pair<int, double> temp[6] = { {2,2.1 }, {0,0.3 }, {1,1.22}, {2,2.5}, {3,3.01}, {4,4 } };
-			Queue<double> h(temp, 6);
-			std::pair<int, double> tmp[6] = { {4,4},{2,2.1},{3,3.01},{0,0.3},{2,2.5},{1,1.22} };
-			for (int j = 0; j < h.getSize(); j++) {
-				temp[j] = h.search(j);
-			}
-			for (int j = 0; j < h.getSize(); j++)
-				assert(tmp[j] == temp[j]);
-		}
-	}
-	void TestQueueDel(){
+	void TestQueue(){
 		{
 			Queue<int> h(2, 1);
 			for (auto i = 0; i < 5; i++) h.add(i, i);
@@ -288,9 +244,7 @@ int main() {
 	std::cout << "5 test ok\n";
 	TestBinarTreeFind();
 	std::cout << "6 test ok\n";
-	TestQueueAdd();
+	TestQueue();
 	std::cout << "7 test ok\n";
-	TestQueueDel();
-	std::cout << "8 test ok\n";
 	std::cout << "all tests ok\n";
 } 
